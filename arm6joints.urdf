@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<robot name="arm">
+  <link name="base_link">
+  </link>
+
+  <link name="link1">
+  </link>
+
+  <link name="link2">
+  </link>
+
+  <link name="link3">
+  </link>
+
+  <link name="link4">
+  </link>
+
+  <link name="link5">
+  </link>
+
+  <link name="link6">
+  </link>
+
+ <link name="object1">
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+      <material name="bodyx">
+        <color rgba="0 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_object1" type="fixed">
+    <parent link="base_link"/>
+    <child link="object1"/>
+    <axis xyz="0 0 0" />
+    <origin rpy="0 0 0" xyz="1.7 0.9 2"/>
+  </joint>
+
+
+  <joint name="base_link1" type="continuous">
+    <parent link="base_link"/>
+    <child link="link1"/>
+    <axis xyz="0 0 1" />
+    <origin rpy="0 0 0" xyz="0 0 1.5"/>
+  </joint>
+
+  <joint name="link1_link2" type="continuous">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <axis xyz="1 0 0" />
+    <origin rpy="0 0 0" xyz="0 0 0.5"/>
+  </joint>
+
+  <joint name="link2_link3" type="continuous">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <axis xyz="1 0 0" />
+    <origin rpy="0 0 0" xyz="0 0 0.5"/>
+  </joint>
+
+  <joint name="link3_link4" type="continuous">
+    <parent link="link3"/>
+    <child link="link4"/>
+    <axis xyz="1 0 0" />
+    <origin rpy="0 0 0" xyz="0 0 0.5"/>
+  </joint>
+
+  <joint name="link4_link5" type="continuous">
+    <parent link="link4"/>
+    <child link="link5"/>
+    <axis xyz="1 0 0" />
+    <origin rpy="0 0 0" xyz="0 0 0.5"/>
+  </joint>
+
+  <joint name="link5_link6" type="continuous">
+    <parent link="link5"/>
+    <child link="link6"/>
+    <axis xyz="1 0 0" />
+    <origin rpy="0 0 0" xyz="0 0 0.5"/>
+  </joint>
+
+</robot>
+

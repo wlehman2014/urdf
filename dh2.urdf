@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<robot name="arm">
+  <link name="base_link">
+  </link>
+
+  <link name="link1">
+  </link>
+
+  <link name="link2">
+  </link>
+
+  <link name="link3">
+  </link>
+
+  <link name="link4">
+  </link>
+
+  <joint name="Primatic Joint" type="prismatic">
+    <parent link="base_link"/>
+    <child link="link1"/>
+    <limit effort="1000.0" lower="-1" upper="1" velocity="0.5"/>
+    <axis xyz="0 0 1" />
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <joint name="R1" type="continuous">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <axis xyz="0 0 1" />
+    <origin rpy="0 0 0" xyz="0.5 0 0"/>
+  </joint>
+
+  <joint name="R2" type="continuous">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <axis xyz="0 0 1" />
+    <origin rpy="0 0 0" xyz="0.5 0 0"/>
+  </joint>
+
+  <joint name="R3" type="continuous">
+    <parent link="link3"/>
+    <child link="link4"/>
+    <axis xyz="0 0 1" />
+    <origin rpy="0 0 0" xyz="0.5 0 0"/>
+  </joint>
+
+</robot>
+

@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<robot name="arm">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="1 1 1"/>
+      </geometry>
+      <material name="bodyc">
+        <color rgba="0 0 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="link1">
+    <visual>
+      <geometry>
+        <box size="0.25 .25 1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.5"/>
+      <material name="linkc1">
+        <color rgba="1 1 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_link1" type="continuous">
+    <parent link="base_link"/>
+    <child link="link1"/>
+    <axis xyz="0 0 1" />
+    <origin rpy="0 0 0" xyz="0 0 0.5"/>
+  </joint>
+
+  <link name="link2">
+    <visual>
+      <geometry>
+        <box size="1 0.25 0.25"/>
+      </geometry>
+      <origin rpy="0 1.571 0" xyz="0 0 0.5"/>
+      <material name="linkc2">
+        <color rgba="1 0 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="link1_link2" type="continuous">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <axis xyz="1 0 0" />
+    <origin rpy="0 0 0" xyz="0 0 1.0"/>
+  </joint>
+
+
+  <link name="link3">
+    <visual>
+      <geometry>
+        <box size="1 0.25 0.25"/>
+      </geometry>
+      <origin rpy="0 1.571 0" xyz="0 0 0.5"/>
+      <material name="linkc3">
+        <color rgba="0 1 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="link2_link3" type="continuous">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <axis xyz="1 0 0" />
+    <origin rpy="0 0 0" xyz="0 0 1.0"/>
+  </joint>
+
+</robot>
+

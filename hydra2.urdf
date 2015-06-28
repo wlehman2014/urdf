@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<robot name="hydra2">
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="1.25 1.25 1"/>
+      </geometry>
+      <material name="bodyc">
+        <color rgba="0 0 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="object1">
+    <visual>
+      <geometry>
+        <box size="0.2 0.2 0.2"/>
+      </geometry>
+      <material name="bodyx">
+        <color rgba="0 0.8 0.8 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_object1" type="fixed">
+    <parent link="base_link"/>
+    <child link="object1"/>
+    <axis xyz="0 0 0" />
+    <origin rpy="0 0 0" xyz="2 0 0"/>
+  </joint>
+
+  <link name="link1a">
+    <visual>
+      <geometry>
+        <box size="0.25 .25 1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.5"/>
+      <material name="linkc1">
+        <color rgba="1 1 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="link2a">
+    <visual>
+      <geometry>
+        <box size="1 0.25 0.25"/>
+      </geometry>
+      <origin rpy="0 1.571 0" xyz="0 0 0.5"/>
+      <material name="linkc2">
+        <color rgba="1 0 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="link3a">
+    <visual>
+      <geometry>
+        <box size="1 0.25 0.25"/>
+      </geometry>
+      <origin rpy="0 1.571 0" xyz="0 0 0.5"/>
+      <material name="linkc3">
+        <color rgba="0 1 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_link1a" type="continuous">
+    <parent link="base_link"/>
+    <child link="link1a"/>
+    <axis xyz="0 0 1" />
+    <origin rpy="0 0 0" xyz="0.5 0 0.5"/>
+  </joint>
+
+  <joint name="link1_link2a" type="continuous">
+    <parent link="link1a"/>
+    <child link="link2a"/>
+    <axis xyz="1 0 0" />
+    <origin rpy="0 0 0" xyz="0 0 1.0"/>
+  </joint>
+
+ <joint name="link2_link3a" type="continuous">
+    <parent link="link2a"/>
+    <child link="link3a"/>
+    <axis xyz="1 0 0" />
+    <origin rpy="0 0 0" xyz="0 0 1.0"/>
+  </joint>
+
+  <link name="link1b">
+    <visual>
+      <geometry>
+        <box size="0.25 .25 1"/>
+      </geometry>
+      <origin rpy="0 0 0" xyz="0 0 0.5"/>
+      <material name="linkc1">
+        <color rgba="1 1 0 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="link2b">
+    <visual>
+      <geometry>
+        <box size="1 0.25 0.25"/>
+      </geometry>
+      <origin rpy="0 1.571 0" xyz="0 0 0.5"/>
+      <material name="linkc2">
+        <color rgba="1 0 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <link name="link3b">
+    <visual>
+      <geometry>
+        <box size="1 0.25 0.25"/>
+      </geometry>
+      <origin rpy="0 1.571 0" xyz="0 0 0.5"/>
+      <material name="linkc3">
+        <color rgba="0 1 1 1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="base_link1b" type="continuous">
+    <parent link="base_link"/>
+    <child link="link1b"/>
+    <axis xyz="0 0 1" />
+    <origin rpy="0 0 0" xyz="-0.5 0 0.5"/>
+  </joint>
+
+  <joint name="link1_link2b" type="continuous">
+    <parent link="link1b"/>
+    <child link="link2b"/>
+    <axis xyz="1 0 0" />
+    <origin rpy="0 0 0" xyz="0 0 1.0"/>
+  </joint>
+
+ <joint name="link2_link3b" type="continuous">
+    <parent link="link2b"/>
+    <child link="link3b"/>
+    <axis xyz="1 0 0" />
+    <origin rpy="0 0 0" xyz="0 0 1.0"/>
+  </joint>
+
+</robot>
+
